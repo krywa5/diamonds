@@ -25,7 +25,6 @@ class Canvas extends Common {
     }
 
     drawGameOnCanvas(gameState) {
-        console.log(gameState);
         this.drawBackground();
         this.drawPointsToWin(gameState.pointsToWin);
         this.drawPlayersPoints(gameState.getPlayerPoints());
