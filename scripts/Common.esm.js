@@ -3,22 +3,27 @@ export const HIDDEN_SCREEN = false;
 export const VISIBLE_SCREEN = true;
 
 export class Common {
-    constructor(elementId) {
-        if (typeof elementId === 'undefined') return;
-        this.element = this.bindToElement(elementId);
-    }
+	constructor(elementId) {
+		if (typeof elementId === 'undefined') {
+			return;
+		}
+		
+		this.element = this.bindToElement(elementId);
+	}
 
-    bindToElement(elementToFindById) {
-        const element = document.getElementById(elementToFindById);
+	bindToElement(elementToFindById) {
+		const element = document.getElementById(elementToFindById);
 
-        if (!element) {
-            throw new Error(`Nie znaleziono elementu o ID: ${elementToFindById}`);
-        }
+		if (!element) {
+			throw new Error(`Nie znaleziono elementu o Id: ${elementToFindById}`);
+		}
 
-        return element;
-    }
+		return element;
+	}
 
-    changeVisibilityScreen(element, mode) {
-        mode === VISIBLE_SCREEN ? element.classList.remove(HIDDEN_CLASS) : element.classList.add(HIDDEN_CLASS);
-    }
+	changeVisibilityScreen(element, mode) {
+		mode === VISIBLE_SCREEN
+			? element.classList.remove(HIDDEN_CLASS)
+			: element.classList.add(HIDDEN_CLASS);
+	}
 }
